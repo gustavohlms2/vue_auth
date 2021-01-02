@@ -66,7 +66,7 @@ app.get('/user', (req, res, next) => {
   let token = req.headers.token; //token
   jwt.verify(token, 'secretkey', (err, decoded) => {
     if (err) return res.status(401).json({
-      title: 'unauthorized'
+      title: 'unauthorized '
     })
     //token is valid
     User.findOne({ _id: decoded.userId }, (err, user) => {
